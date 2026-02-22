@@ -142,6 +142,8 @@ From the table, download:
 - Partitions → `0x8000`
 - Boot App → `0xE000`
 
+![Bootloader Partitions Boot App](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Bootloader%2C%20Partitions%2C%20Boot%20App%2C%20Firmware.jpg)
+
 Now go to Releases:
 
 https://github.com/justcallmekoko/ESP32Marauder/releases
