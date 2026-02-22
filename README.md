@@ -19,7 +19,7 @@ First off, download the [USB to UART drivers](https://www.silabs.com/software-an
 I don't know man, probably restart your pc for spits and gigs. I just like to do that sometimes to ensure. You know, Driver stuff. Anyway. Plug in your CYD, I used USB-C. Open up *'Device Manager'* 
 
 
- ![Device Manager](<img width="158" height="217" alt="Device Manager" src="https://github.com/user-attachments/assets/35fb8db9-b7e9-44eb-85ac-62b306169c16" />)
+ ![Device Manager.jpg](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Device%20Manager.jpg)
 
 You want to see something like this (your COM port wont be as high as mine for sure, I got 3 million things plugged into my comp, But it's what we are gonna need to know. For example mine is COM15. 
 
@@ -38,33 +38,36 @@ take note of the COM port your esp32(cyd) is on. Pop in this command.
 
 for COM15 you'll have to replace your snippit of code for your own COM port.
 
-all we are doing here is just erasing everything that was on these little guys. Sometimes they ship with somesort of weird factory image. ![Factory Image](image.jpg)
+all we are doing here is just erasing everything that was on these little guys. Sometimes they ship with somesort of weird factory image. ![Factory Image](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/factory%20image.jpg)
 
 So when you run that command, on the back of the CYD, There is 2 Buttons. "Boot" "Reset"
 
-There will be a text box that says connecting. The connecting text will exist for about 10 seconds ![Connecting](image.jpg). Hold 'boot' and while holding it, press 'reset' let go of 'reset' and then let go of 'boot'.
+There will be a text box that says connecting. The connecting text will exist for about 10 seconds ![Connecting](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/connecting.jpg)
+Hold 'boot' and while holding it, press 'reset' let go of 'reset' and then let go of 'boot'.
 so kinda,
+
+![Buttons](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/esp32%20back.jpg)
 
 -hold boot
 -press reset
 -let go of boot
 
 I know it seems a bit much. But, trust me. It's going to feel better knowing the entire thing is cleared out.
-![Powershell Erase](image.jpg)
+![Powershell Erase](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Powershell%20Erase.jpg)
 
 ---
 
 2. Doing the actual thing.
 
 Alright, so lets go to this website,  [Esptool Spacehuhn](https://esptool.spacehuhn.com/)
-![ESPtool Spacehuhn](image.jpg) I circled connect in case you are braindead. It should Autoconnect.
+![ESPtool Spacehuhn](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESPtool%20Spacehuhn.jpg) I circled connect in case you are braindead. It should Autoconnect.
 
 What will show up now is a series of boxes that say 
 0x
 (and then some value)
 
 It will look something like this.
-![ESPtool Spacehuhn Setup](image.jpg)
+![ESPtool Spacehuhn Setup](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESPtool%20Spacehuhn%20Setup.jpg)
 
 Open up another tab and go to justcallmekokos github, there is a page about updating firmware ![Here](https://github.com/justcallmekoko/ESP32Marauder/wiki/update-firmware)
 
@@ -74,14 +77,14 @@ Grab these files from this table.
 -Boot App 0xE000
 
 The Firmware we are going to grab from justcallmekokos most recent ![releases] (https://github.com/justcallmekoko/ESP32Marauder/releases) and scroll down untill you see "Assets"
-![Assets](image.jpg) 
+![Assets](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Assets.jpg) 
 
 Select the "esp32_marauder_v1_10_3_beta_20260221_cyd_243S028_2usb"
 
-With each of those files, put them into the ESPWEBTOOL just like how they are in this photo. ![Look like this](image.jpg)
+With each of those files, put them into the ESPWEBTOOL just like how they are in this photo. ![Look like this](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Look%20like%20this.jpg)
 
 hit "program"
 
-It will take a couple minutes, it will finish and look like this ![Finish](image.jpg) 
+It will take a couple minutes, it will finish and look like this ![Finish](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/finished.jpg)
 
 unplug that bad boy from the comp... plug it back in. witness the glory.
