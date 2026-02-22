@@ -1,92 +1,182 @@
-# Maurader_Install_Tutorial
-The installs of justcallmekokos ESP32  Mauraders
+# Marauder Install Tutorial (CYD)
 
+Guide for installing **justcallmekoko’s ESP32 Marauder** on a CYD (Cheap Yellow Display).
 
-## Intro ##
-The primary function of this readme is purely to assist my friend install justcallmekokos ESP32mauraders on a CYD. As time goes on I'll be expanding this page for proposed alterations that we discuss.
-
----
-
-## **Table of Contents** ##
-1. Set Up.
-2. Doing the Actual Thing.
+Originally written to help a friend. Will expand over time with tweaks and experiments.
 
 ---
 
-** 1. Set Up **
+## Table of Contents
 
-First off, download the [USB to UART drivers](https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers)
-I don't know man, probably restart your pc for spits and gigs. I just like to do that sometimes to ensure. You know, Driver stuff. Anyway. Plug in your CYD, I used USB-C. Open up *'Device Manager'* 
+1. [Setup](#1-setup)
+2. [Flashing Marauder](#2-flashing-marauder)
 
+---
 
- ![Device Manager.jpg](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Device%20Manager.jpg)
+# 1. Setup
 
-You want to see something like this (your COM port wont be as high as mine for sure, I got 3 million things plugged into my comp, But it's what we are gonna need to know. For example mine is COM15. 
+## Install USB to UART Drivers
 
-Open up Windows Powershell
-Make sure you have python installed,
+Download the Silicon Labs USB to UART drivers:
 
-'python --version'
+https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers
 
-if you don't
+After installing, restart your PC.  
+Not strictly required — but drivers + Windows = I don’t argue.
 
- 'winget install Python.Python.3 --scope machine'
+---
 
-take note of the COM port your esp32(cyd) is on. Pop in this command.
+## Verify Your COM Port
 
-'python -m esptool --chip esp32 --port COM15 erase_flash'
+Plug in your CYD (USB-C worked for me).
 
-for COM15 you'll have to replace your snippit of code for your own COM port.
+Open **Device Manager** and look under **Ports (COM & LPT)**.
 
-all we are doing here is just erasing everything that was on these little guys. Sometimes they ship with somesort of weird factory image. ![Factory Image](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/factory%20image.jpg)
+You should see something like this:
 
-So when you run that command, on the back of the CYD, There is 2 Buttons. "Boot" "Reset"
+![Device Manager](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Device%20Manager.jpg)
 
-There will be a text box that says connecting. The connecting text will exist for about 10 seconds ![Connecting](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/connecting.jpg)
-Hold 'boot' and while holding it, press 'reset' let go of 'reset' and then let go of 'boot'.
-so kinda,
+Take note of the COM port number.  
+Example: mine is `COM15`.
+
+Yours will likely be different.
+
+---
+
+## Verify Python
+
+Open **PowerShell** and run:
+
+```powershell
+python --version
+```
+
+You should see something like:
+
+![Python Version](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/python%20--version.jpg)
+
+If you don’t have Python installed:
+
+```powershell
+winget install Python.Python.3 --scope machine
+```
+
+---
+
+## Erase the ESP32 Flash
+
+We’re going to fully wipe the board.  
+Some CYDs ship with strange factory images.
+
+Run:
+
+```powershell
+python -m esptool --chip esp32 --port COM15 erase_flash
+```
+
+Replace `COM15` with your actual COM port.
+
+Example factory image:
+
+![Factory Image](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/factory%20image.jpg)
+
+---
+
+### Enter Boot Mode
+
+When you run the command, it will say **Connecting…**
+
+On the back of the CYD, there are two buttons:
+
+- Boot  
+- Reset  
 
 ![Buttons](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/esp32%20back.jpg)
 
--hold boot
--press reset
--let go of boot
+Do this:
 
-I know it seems a bit much. But, trust me. It's going to feel better knowing the entire thing is cleared out.
-![Powershell Erase](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Powershell%20Erase.jpg)
+1. Hold **Boot**
+2. Press **Reset**
+3. Release **Reset**
+4. Release **Boot**
+
+You’ll see something like this when erase completes:
+
+![Erase Complete](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Powershell%20Erase.jpg)
 
 ---
 
-2. Doing the actual thing.
+# 2. Flashing Marauder
 
-Alright, so lets go to this website,  [Esptool Spacehuhn](https://esptool.spacehuhn.com/)
-![ESPtool Spacehuhn](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESPtool%20Spacehuhn.jpg) I circled connect in case you are braindead. It should Autoconnect.
+## Open ESP Web Tool
 
-What will show up now is a series of boxes that say 
-0x
-(and then some value)
+Go here:
 
-It will look something like this.
-![ESPtool Spacehuhn Setup](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESPtool%20Spacehuhn%20Setup.jpg)
+https://esptool.spacehuhn.com/
 
-Open up another tab and go to justcallmekokos github, there is a page about updating firmware ![Here](https://github.com/justcallmekoko/ESP32Marauder/wiki/update-firmware)
+Click **Connect** (it should auto-detect).
 
-Grab these files from this table.
--Bootloader 0x1000
--Partitions 0x8000
--Boot App 0xE000
+![ESPTool Web](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESPtool%20Spacehuhn.jpg)
 
-The Firmware we are going to grab from justcallmekokos most recent ![releases] (https://github.com/justcallmekoko/ESP32Marauder/releases) and scroll down untill you see "Assets"
-![Assets](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Assets.jpg) 
+You’ll see several address fields like:
 
-Select the "esp32_marauder_v1_10_3_beta_20260221_cyd_243S028_2usb"
+```
+0x____
+```
 
-![Correct file](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESP32%20maurader%201.jpg)
+Example layout:
 
-With each of those files, put them into the ESPWEBTOOL just like how they are in this photo. ![Look like this](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Look%20like%20this.jpg)
+![ESPTool Setup](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESPtool%20Spacehuhn%20Setup.jpg)
 
-hit "program"
+---
 
-It will take a couple minutes, it will finish and look like this ![Finish](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/finished.jpg)
+## Get Required Files
 
-unplug that bad boy from the comp... plug it back in. witness the glory.
+Open the Marauder firmware wiki:
+
+https://github.com/justcallmekoko/ESP32Marauder/wiki/update-firmware
+
+From the table, download:
+
+- Bootloader → `0x1000`
+- Partitions → `0x8000`
+- Boot App → `0xE000`
+
+Now go to Releases:
+
+https://github.com/justcallmekoko/ESP32Marauder/releases
+
+Scroll to **Assets**.
+
+![Assets](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Assets.jpg)
+
+Select:
+
+```
+esp32_marauder_v1_10_3_beta_20260221_cyd_243S028_2usb.bin
+```
+
+![Correct File](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESP32%20maurader%201.jpg)
+
+---
+
+## Load Files into ESP Web Tool
+
+Match each file to its correct address in ESP Web Tool exactly like this:
+
+![Correct Layout](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Look%20like%20this.jpg)
+
+Then click **Program**.
+
+It will take a few minutes.
+
+When finished, you’ll see:
+
+![Finished](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/finished.jpg)
+
+---
+
+Unplug the CYD.  
+Plug it back in.
+
+Witness the glory.
