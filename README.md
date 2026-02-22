@@ -81,6 +81,8 @@ The Firmware we are going to grab from justcallmekokos most recent ![releases] (
 
 Select the "esp32_marauder_v1_10_3_beta_20260221_cyd_243S028_2usb"
 
+![Correct file](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/ESP32%20maurader%201.jpg)
+
 With each of those files, put them into the ESPWEBTOOL just like how they are in this photo. ![Look like this](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/Look%20like%20this.jpg)
 
 hit "program"
