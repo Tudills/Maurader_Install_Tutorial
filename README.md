@@ -197,7 +197,7 @@ https://codehedge.github.io/Adafruit_WebSerial_ESPTool/
 This must also be done using Chrome or Edge.
 This thing rules.
 
-[Webflasher](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/2nd%20iteration/WebFlasher.jpg)
+![Webflasher](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/2nd%20iteration/WebFlasher.jpg)
 
 Before using this method, I recommend performing the full PowerShell erase process first.
 
@@ -212,4 +212,4 @@ Reboot or unplug and plug it back in.
 You should now be greeted with Marauder running on your CYD.
 
 Witness the glory.
-[Success](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/2nd%20iteration/Success.jpg)
+![Success](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/2nd%20iteration/Success.jpg)
