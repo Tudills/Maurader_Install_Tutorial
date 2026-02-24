@@ -10,6 +10,7 @@ Originally written to help a friend. Will expand over time with tweaks and exper
 
 1. [Setup](#1-setup)
 2. [Flashing Marauder](#2-flashing-marauder)
+3. [Alternative Method](#3-Alternative-Method)
 
 ---
 
@@ -180,5 +181,35 @@ When finished, you’ll see:
 
 Unplug the CYD.  
 Plug it back in.
+Party
+
+---
+
+# 3. Alternative Method
+
+The stock CYD firmware uses a two-button interface:  
+even though we got a whole touch screen... two touch actions... no no no.
+
+If you want to try another method:
+
+https://codehedge.github.io/Adafruit_WebSerial_ESPTool/
+
+This must also be done using Chrome or Edge.
+This thing rules.
+
+[Webflasher](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/2nd%20iteration/WebFlasher.jpg)
+
+Before using this method, I recommend performing the full PowerShell erase process first.
+
+When connecting, you may need to practice the Boot/Reset timing. It can be tricky.
+
+Once flashing completes, it will say:
+
+"Flash process completed!"
+
+Reboot or unplug and plug it back in.
+
+You should now be greeted with Marauder running on your CYD.
 
 Witness the glory.
+[Success](https://github.com/Tudills/Maurader_Install_Tutorial/blob/main/Mauraders/2nd%20iteration/Success.jpg)
